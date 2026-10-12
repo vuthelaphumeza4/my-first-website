@@ -4,32 +4,286 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My First Website</title>
+  <meta name="description" content="Welcome to my personal website and web development journey.">
+  <title>My Portfolio | Web Developer</title>
+
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      text-align: center;
-      background: #eaf0ff;
-      padding: 80px 20px;
+      background: #0b1120;
+      color: #f8fafc;
+      line-height: 1.7;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: #111a2e;
+      border-bottom: 1px solid #26334b;
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      color: #60a5fa;
+      font-size: 1.35rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #cbd5e1;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      color: #60a5fa;
+    }
+
+    .hero {
+      min-height: 490px;
+      display: flex;
+      align-items: center;
+      padding: 90px 0;
+      background: radial-gradient(ellipse at top right, #1d3764, #0b1120 65%);
+    }
+
+    .eyebrow {
+      color: #60a5fa;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 0.85rem;
     }
 
     h1 {
-      color: #2447d8;
+      max-width: 760px;
+      margin: 16px 0;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.12;
     }
 
-    button {
-      background: #2447d8;
+    h1 span {
+      color: #60a5fa;
+    }
+
+    .hero p {
+      max-width: 600px;
+      color: #cbd5e1;
+      font-size: 1.1rem;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 12px 22px;
+      border-radius: 8px;
+      background: #3b82f6;
       color: white;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.2s;
+    }
+
+    .button:hover {
+      background: #2563eb;
+    }
+
+    section.content-section {
+      padding: 75px 0;
+    }
+
+    .section-title {
+      margin-bottom: 12px;
+      font-size: 2rem;
+    }
+
+    .section-description {
+      max-width: 650px;
+      color: #aab8cc;
+      margin-bottom: 30px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      padding: 25px;
+      border: 1px solid #293852;
+      border-radius: 14px;
+      background: #111a2e;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #93c5fd;
+    }
+
+    .card p {
+      color: #cbd5e1;
+    }
+
+    .about {
+      background: #111a2e;
+    }
+
+    .contact-link {
+      color: #93c5fd;
+    }
+
+    footer {
+      padding: 25px 0;
+      border-top: 1px solid #26334b;
+      color: #94a3b8;
+      text-align: center;
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        padding: 16px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 70px 0;
+      }
+
+      section.content-section {
+        padding: 55px 0;
+      }
     }
   </style>
 </head>
+
 <body>
-  <h1>Welcome to My First Website!</h1>
-  <p>I am learning to build websites.</p>
-  <button onclick="alert('It works!')">Click Me</button>
+  <header>
+    <nav class="container">
+      <a class="logo" href="#home">MyPortfolio.</a>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <p class="eyebrow">Welcome to my portfolio</p>
+        <h1>Building my future, <span>one project at a time.</span></h1>
+        <p>
+          I'm learning, creating, and improving my web development skills.
+          This is where I share my journey and the projects I build.
+        </p>
+        <a class="button" href="#projects">Explore My Projects</a>
+      </div>
+    </section>
+
+    <section class="content-section" id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-description">
+          I'm growing as a developer by building real projects,
+          learning new technologies, and solving problems through code.
+          Every project is an opportunity to improve.
+        </p>
+      </div>
+    </section>
+
+    <section class="content-section" id="projects">
+      <div class="container">
+        <h2 class="section-title">My Projects</h2>
+        <p class="section-description">
+          Here are some of the projects I'm working on as I develop my skills.
+        </p>
+
+        <div class="cards">
+          <article class="card">
+            <h3>My First Website</h3>
+            <p>A responsive website built with HTML and CSS and published using GitHub Pages.</p>
+          </article>
+
+          <article class="card">
+            <h3>Coming Soon</h3>
+            <p>My next project will help me practise JavaScript and interactive web design.</p>
+          </article>
+
+          <article class="card">
+            <h3>Future Projects</h3>
+            <p>I'm exploring new ideas and building my portfolio one project at a time.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section about" id="contact">
+      <div class="container">
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="section-description">
+          Want to see my code or follow my progress?
+          Visit my GitHub profile to explore my projects.
+        </p>
+        <a
+          class="button"
+          href="https://github.com/vuthelaphumeza4"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Visit My GitHub
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 MyPortfolio. Built with HTML and CSS.</p>
+    </div>
+  </footer>
 </body>
 </html>
